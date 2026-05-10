@@ -216,7 +216,7 @@ int main(void)
   // 显示编号
   char id_str[6];
   sprintf(id_str, "ID:%d", NRF_PAIR_ID);
-  OLED_ShowString(1, 10, id_str);
+  OLED_ShowString(1, 11, id_str);
   
   nrf24l01p_tx_init(2500, _1Mbps);
 
@@ -370,9 +370,9 @@ int main(void)
               // 最后的 4 个空格用来彻底覆盖掉屏幕残留的 ig:WAIT
               // 根据状态拼接不同的字符串，同时保证末尾对齐覆盖
               if (rx_mos_state == 1) { // 1 代表高电平 (ON)
-                sprintf(power_str, "P=%d.%03dW ON    ", power_mw / 1000, power_mw % 1000);
+                sprintf(power_str, "P=%d.%03dW  ON    ", power_mw / 1000, power_mw % 1000);
               } else {                 // 0 代表低电平 (OFF)
-                sprintf(power_str, "P=%d.%03dW OFF   ", power_mw / 1000, power_mw % 1000);
+                sprintf(power_str, "P=%d.%03dW  OFF   ", power_mw / 1000, power_mw % 1000);
               }
 
               OLED_ShowString(2, 1, power_str);
