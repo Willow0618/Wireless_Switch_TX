@@ -1,0 +1,46 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex-Debug: Download & Debug (OpenOCD)",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/Debug/Wireless_Switch_TX.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "runToEntryPoint": "main",
+            "servertype": "openocd",
+            "openocdPath": "D:\\OpenOCD-20260121-0.12.0\\bin\\openocd.exe",
+            "searchDir": [
+                "D:\\OpenOCD-20260121-0.12.0\\share\\openocd\\scripts"
+            ],
+            "configFiles": [
+                "${workspaceFolder}/stm32_openocd.cfg"
+            ],
+            "preLaunchTask": "Build: Debug",
+            "device": "STM32F103RB",
+            "interface": "swd",
+            "loadFiles": [
+                "${workspaceFolder}/build/Debug/Wireless_Switch_TX.elf"
+            ]
+        },
+        {
+            "name": "Cortex-Debug: Download Only (OpenOCD)",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/Debug/Wireless_Switch_TX.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "openocdPath": "D:\\OpenOCD-20260121-0.12.0\\bin\\openocd.exe",
+            "searchDir": [
+                "D:\\OpenOCD-20260121-0.12.0\\share\\openocd\\scripts"
+            ],
+            "configFiles": [
+                "${workspaceFolder}/stm32_openocd.cfg"
+            ],
+            "preLaunchTask": "Build: Debug",
+            "device": "STM32F103RB",
+            "interface": "swd",
+            "noDebug": true
+        }
+    ]
+}
